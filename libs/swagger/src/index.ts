@@ -1,2 +1,2 @@
-export * from './swagger.module';
-export * from './swagger.service';
+export * from './auto-swagger.module';
+export * from './auto-swagger.service';
