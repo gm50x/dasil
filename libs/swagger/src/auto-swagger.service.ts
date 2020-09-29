@@ -8,6 +8,7 @@ export class AutoSwaggerService {
   addSwagger(app: INestApplication, prefix: string = 'APP'): void {
     const options = new DocumentBuilder()
       .setTitle(this.env.get(`${prefix}_TITLE`) || 'Sample API')
+      .setContact('Getúlio Magela Silva', 'https://github.com/gm50x', '')
       .setDescription(
         this.env.get(`${prefix}_DESCRIPTION`) ||
           'This is a sample API, use it as you like.',
@@ -19,6 +20,10 @@ export class AutoSwaggerService {
       this.env.get(`${prefix}_DOCS`) || 'api-docs',
       app,
       docs,
+      {
+        explorer: true,
+        swaggerUrl: 'http://localhost:3000/swagger.json',
+      },
     );
   }
 }
