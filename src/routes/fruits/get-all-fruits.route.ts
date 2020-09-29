@@ -1,4 +1,4 @@
-import { In } from '@gm50x/common';
+import { InHeaders } from '@gm50x/common';
 import { Controller, Get, Headers } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 import { GetAllFruitsUseCase } from 'src/core/fruits/get-all-fruits.use-case';
@@ -11,7 +11,7 @@ export class GetAllFruitsRoute {
   constructor(private readonly getAllFruitsUseCase: GetAllFruitsUseCase) {}
   @Get()
   async activate(
-    @In() @Headers() input: GetAllFruitsInput,
+    @InHeaders() @Headers() input: GetAllFruitsInput,
   ): Promise<GetAllFruitsOutput> {
     return this.getAllFruitsUseCase.activate(input);
   }

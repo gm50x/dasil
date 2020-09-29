@@ -1,4 +1,4 @@
-import { In } from '@gm50x/common';
+import { InHeaders } from '@gm50x/common';
 import { Controller, Get, Headers } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import { GetAllAnimalsUseCase } from 'src/core/animals/get-all-animals.use-case';
@@ -12,7 +12,7 @@ export class GetAllAnimalsRoute {
   @Get()
   @ApiResponse({ status: 200, type: GetAllAnimalsOutput })
   async activate(
-    @In() @Headers() input: GetAllAnimalsInput,
+    @InHeaders() @Headers() input: GetAllAnimalsInput,
   ): Promise<GetAllAnimalsOutput> {
     return await this.getAllAnimalsUseCase.activate(input);
   }
