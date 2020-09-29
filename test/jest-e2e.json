@@ -1,9 +1,5 @@
 {
-  "moduleFileExtensions": [
-    "js",
-    "json",
-    "ts"
-  ],
+  "moduleFileExtensions": ["js", "json", "ts"],
   "rootDir": ".",
   "testEnvironment": "node",
   "testRegex": ".e2e-spec.ts$",
@@ -15,7 +11,7 @@
     "@gm50x/common": "<rootDir>/../libs/common/src",
     "@gm50x/environment/(.*)": "<rootDir>/../libs/environment/src/$1",
     "@gm50x/environment": "<rootDir>/../libs/environment/src",
-    "@gm50x/databases/(.*)": "<rootDir>/../libs/databases/src/$1",
-    "@gm50x/databases": "<rootDir>/../libs/databases/src"
+    "@gm50x/database/(.*)": "<rootDir>/../libs/databases/src/$1",
+    "@gm50x/database": "<rootDir>/../libs/databases/src"
   }
 }

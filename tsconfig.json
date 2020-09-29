@@ -12,24 +12,12 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@gm50x/common": [
-        "libs/common/src"
-      ],
-      "@gm50x/common/*": [
-        "libs/common/src/*"
-      ],
-      "@gm50x/environment": [
-        "libs/environment/src"
-      ],
-      "@gm50x/environment/*": [
-        "libs/environment/src/*"
-      ],
-      "@gm50x/databases": [
-        "libs/databases/src"
-      ],
-      "@gm50x/databases/*": [
-        "libs/databases/src/*"
-      ]
+      "@gm50x/common": ["libs/common/src"],
+      "@gm50x/common/*": ["libs/common/src/*"],
+      "@gm50x/environment": ["libs/environment/src"],
+      "@gm50x/environment/*": ["libs/environment/src/*"],
+      "@gm50x/database": ["libs/databases/src"],
+      "@gm50x/database/*": ["libs/databases/src/*"]
     }
   }
 }
