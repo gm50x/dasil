@@ -17,6 +17,12 @@
       ],
       "@gm50x/common/*": [
         "libs/common/src/*"
+      ],
+      "@gm50x/environment": [
+        "libs/environment/src"
+      ],
+      "@gm50x/environment/*": [
+        "libs/environment/src/*"
       ]
     }
   }
