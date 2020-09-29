@@ -23,6 +23,12 @@
       ],
       "@gm50x/environment/*": [
         "libs/environment/src/*"
+      ],
+      "@gm50x/databases": [
+        "libs/databases/src"
+      ],
+      "@gm50x/databases/*": [
+        "libs/databases/src/*"
       ]
     }
   }

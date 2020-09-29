@@ -14,6 +14,8 @@
     "@gm50x/common/(.*)": "<rootDir>/../libs/common/src/$1",
     "@gm50x/common": "<rootDir>/../libs/common/src",
     "@gm50x/environment/(.*)": "<rootDir>/../libs/environment/src/$1",
-    "@gm50x/environment": "<rootDir>/../libs/environment/src"
+    "@gm50x/environment": "<rootDir>/../libs/environment/src",
+    "@gm50x/databases/(.*)": "<rootDir>/../libs/databases/src/$1",
+    "@gm50x/databases": "<rootDir>/../libs/databases/src"
   }
 }

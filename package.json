@@ -26,6 +26,7 @@
     "@nestjs/config": "^0.5.0",
     "@nestjs/core": "^7.0.0",
     "@nestjs/platform-express": "^7.0.0",
+    "@nestjs/typeorm": "^7.1.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4"
@@ -92,7 +93,9 @@
       "@gm50x/common/(.*)": "<rootDir>/libs/common/src/$1",
       "@gm50x/common": "<rootDir>/libs/common/src",
       "@gm50x/environment/(.*)": "<rootDir>/libs/environment/src/$1",
-      "@gm50x/environment": "<rootDir>/libs/environment/src"
+      "@gm50x/environment": "<rootDir>/libs/environment/src",
+      "@gm50x/databases/(.*)": "<rootDir>/libs/databases/src/$1",
+      "@gm50x/databases": "<rootDir>/libs/databases/src"
     }
   }
 }
