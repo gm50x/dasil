@@ -45,6 +45,7 @@
     "eslint-plugin-import": "^2.20.1",
     "husky": "^4.3.0",
     "jest": "26.4.2",
+    "lint-staged": "^10.4.0",
     "prettier": "^1.19.1",
     "supertest": "^4.0.2",
     "ts-jest": "26.2.0",
@@ -52,6 +53,19 @@
     "ts-node": "9.0.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^3.7.4"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "prettier --write",
+      "git add -f"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged && npm test",
+      "pre-push": "npm test",
+      "commit-msg": "commitlint -c .commitlintrc.json -E HUSKY_GIT_PARAMS"
+    }
   },
   "jest": {
     "moduleFileExtensions": [
