@@ -95,7 +95,9 @@
       "@gm50x/environment/(.*)": "<rootDir>/libs/environment/src/$1",
       "@gm50x/environment": "<rootDir>/libs/environment/src",
       "@gm50x/database/(.*)": "<rootDir>/libs/databases/src/$1",
-      "@gm50x/database": "<rootDir>/libs/databases/src"
+      "@gm50x/database": "<rootDir>/libs/databases/src",
+      "@gm50x/swagger/(.*)": "<rootDir>/libs/swagger/src/$1",
+      "@gm50x/swagger": "<rootDir>/libs/swagger/src"
     }
   }
 }

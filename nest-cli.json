@@ -28,6 +28,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/databases/tsconfig.lib.json"
       }
+    },
+    "swagger": {
+      "type": "library",
+      "root": "libs/swagger",
+      "entryFile": "index",
+      "sourceRoot": "libs/swagger/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/swagger/tsconfig.lib.json"
+      }
     }
   },
   "compilerOptions": {
