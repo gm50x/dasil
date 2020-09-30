@@ -1,2 +1,1 @@
-export * from './animals';
-export * from './fruits';
+export const init = true;
