@@ -4,6 +4,7 @@ describe('EnvironmentService', () => {
   let env: NodeJS.ProcessEnv;
   beforeEach(async () => {
     env = { ...process.env };
+    env.NODE_ENV = 'Test';
   });
 
   it('should be defined', () => {
