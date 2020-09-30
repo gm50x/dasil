@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GetFeatureByNameUseCase } from '.';
+import { GetFeatureByNameUseCase } from './get-feature-by-name';
 
 describe(GetFeatureByNameUseCase.name, () => {
   let instance: GetFeatureByNameUseCase;
