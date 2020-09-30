@@ -1,1 +1,1 @@
-export const init = true;
+export * from './get-feature-by-name';
