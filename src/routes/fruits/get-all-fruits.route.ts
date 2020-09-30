@@ -1,9 +1,9 @@
 import { InHeaders } from '@gm50x/common';
 import { Controller, Get, Headers } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-import { GetAllFruitsUseCase } from 'src/core/fruits/get-all-fruits.use-case';
-import { GetAllFruitsInput } from 'src/core/fruits/io/get-all-fruits.input';
-import { GetAllFruitsOutput } from 'src/core/fruits/io/get-all-fruits.output';
+import { GetAllFruitsUseCase } from '../../core/fruits/get-all-fruits.use-case';
+import { GetAllFruitsInput } from '../../core/fruits/io/get-all-fruits.input';
+import { GetAllFruitsOutput } from '../../core/fruits/io/get-all-fruits.output';
 
 @ApiTags('Fruits')
 @Controller('fruit')

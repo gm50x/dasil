@@ -1,9 +1,9 @@
 import { InHeaders } from '@gm50x/common';
 import { Controller, Get, Headers } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
-import { GetAllAnimalsUseCase } from 'src/core/animals/get-all-animals.use-case';
-import { GetAllAnimalsInput } from 'src/core/animals/io/get-all-animals.input';
-import { GetAllAnimalsOutput } from 'src/core/animals/io/get-all-animals.output';
+import { GetAllAnimalsUseCase } from '../../core/animals/get-all-animals.use-case';
+import { GetAllAnimalsInput } from '../../core/animals/io/get-all-animals.input';
+import { GetAllAnimalsOutput } from '../../core/animals/io/get-all-animals.output';
 
 @ApiTags('Animals')
 @Controller('animal')

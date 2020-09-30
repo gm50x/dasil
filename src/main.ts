@@ -1,3 +1,4 @@
+import { EnvironmentService } from '@gm50x/environment';
 import { AutoSwaggerService } from '@gm50x/swagger';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
@@ -7,9 +8,13 @@ async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api/v1');
   app.useGlobalPipes(
-    new ValidationPipe({ transform: true, validateCustomDecorators: true }),
+    new ValidationPipe({
+      transform: true,
+      validateCustomDecorators: true,
+    }),
   );
+  console.log();
   app.get(AutoSwaggerService).addSwagger(app);
-  await app.listen(3000);
+  await app.listen(app.get(EnvironmentService).get('PORT'));
 }
 bootstrap();
