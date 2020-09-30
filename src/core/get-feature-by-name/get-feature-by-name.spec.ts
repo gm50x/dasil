@@ -1,3 +1,4 @@
+import { MockRepository } from '@gm50x/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { GetFeatureByNameUseCase } from './get-feature-by-name';
 
@@ -7,7 +8,9 @@ describe(GetFeatureByNameUseCase.name, () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [GetFeatureByNameUseCase],
-      providers: [],
+      providers: [
+        { provide: 'FeatureToggleRepository', useClass: MockRepository },
+      ],
     }).compile();
 
     instance = app.get(GetFeatureByNameUseCase);
