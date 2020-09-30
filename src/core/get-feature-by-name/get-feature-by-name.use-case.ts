@@ -16,6 +16,6 @@ export class GetFeatureByNameUseCase {
     input: GetFeatureByNameInput,
   ): Promise<GetFeatureByNameOutput> {
     const feature = await this.featuresRepo.findOne(input.toggleName);
-    return new GetFeatureByNameOutput(feature.name, feature.active);
+    return new GetFeatureByNameOutput(feature?.name, feature?.active);
   }
 }
