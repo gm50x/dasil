@@ -11,7 +11,7 @@ import {
 export class GetFeatureByNameRoute {
   constructor(private readonly getFeatureByName: GetFeatureByNameUseCase) {}
 
-  @Get()
+  @Get(':toggleName')
   async activate(
     @Param() input: GetFeatureByNameInput,
   ): Promise<GetFeatureByNameOutput> {
