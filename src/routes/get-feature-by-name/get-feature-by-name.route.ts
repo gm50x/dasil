@@ -1,3 +1,4 @@
+import { RequestError, ServerError } from '@gm50x/common';
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import {
@@ -13,6 +14,8 @@ export class GetFeatureByNameRoute {
 
   @Get(':toggleName')
   @ApiResponse({ status: 200, type: GetFeatureByNameOutput })
+  @ApiResponse({ status: 400, type: RequestError })
+  @ApiResponse({ status: 500, type: ServerError })
   async activate(
     @Param() input: GetFeatureByNameInput,
   ): Promise<GetFeatureByNameOutput> {
