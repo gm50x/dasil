@@ -15,6 +15,6 @@ export class GetFeatureByNameRoute {
   async activate(
     @Param() input: GetFeatureByNameInput,
   ): Promise<GetFeatureByNameOutput> {
-    return this.getFeatureByName.activate(input);
+    return await this.getFeatureByName.activate(input);
   }
 }
