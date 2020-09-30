@@ -13,7 +13,6 @@ async function bootstrap() {
       validateCustomDecorators: true,
     }),
   );
-  console.log();
   app.get(AutoSwaggerService).addSwagger(app);
   await app.listen(app.get(EnvironmentService).get('PORT'));
 }
