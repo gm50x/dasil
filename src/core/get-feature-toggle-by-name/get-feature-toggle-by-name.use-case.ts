@@ -2,8 +2,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { FeatureToggle } from './entities/feature-toggle.entity';
-import { GetFeatureByNameInput } from './io/get-feature-by-name.input';
-import { GetFeatureByNameOutput } from './io/get-feature-by-name.output';
+import { GetFeatureByNameInput } from './io/get-feature-toggle-by-name.input';
+import { GetFeatureByNameOutput } from './io/get-feature-toggle-by-name.output';
 
 @Injectable()
 export class GetFeatureByNameUseCase {

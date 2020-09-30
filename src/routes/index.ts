@@ -1,1 +1,1 @@
-export * from './get-feature-by-name/get-feature-by-name.route';
+export * from './get-feature-toggle-by-name/get-feature-toggle-by-name.route';

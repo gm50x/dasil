@@ -5,7 +5,7 @@ import {
   GetFeatureByNameOutput,
   GetFeatureByNameUseCase,
 } from '../../core';
-import { GetFeatureByNameRoute } from './get-feature-by-name.route';
+import { GetFeatureByNameRoute } from './get-feature-toggle-by-name.route';
 
 describe(GetFeatureByNameRoute.name, () => {
   let instance: GetFeatureByNameRoute;

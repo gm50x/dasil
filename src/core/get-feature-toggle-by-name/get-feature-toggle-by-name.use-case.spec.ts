@@ -2,9 +2,9 @@ import { MockRepository } from '@gm50x/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Repository } from 'typeorm';
 import { FeatureToggle } from './entities/feature-toggle.entity';
-import { GetFeatureByNameUseCase } from './get-feature-by-name.use-case';
-import { GetFeatureByNameInput } from './io/get-feature-by-name.input';
-import { GetFeatureByNameOutput } from './io/get-feature-by-name.output';
+import { GetFeatureByNameUseCase } from './get-feature-toggle-by-name.use-case';
+import { GetFeatureByNameInput } from './io/get-feature-toggle-by-name.input';
+import { GetFeatureByNameOutput } from './io/get-feature-toggle-by-name.output';
 
 describe(GetFeatureByNameUseCase.name, () => {
   let instance: GetFeatureByNameUseCase;
