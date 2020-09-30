@@ -1,11 +1,16 @@
+import { DatabaseModule } from '@gm50x/database';
 import { EnvironmentModule } from '@gm50x/environment';
 import { AutoSwaggerModule } from '@gm50x/swagger';
 import { Module } from '@nestjs/common';
-import { GetFeatureByNameRoute } from '.';
+import { GetFeatureByNameRoute, GetFeatureByNameUseCase } from '.';
 
 @Module({
-  imports: [EnvironmentModule, AutoSwaggerModule],
+  imports: [
+    EnvironmentModule,
+    AutoSwaggerModule,
+    DatabaseModule.fromEnvironmentKeys(['DATABASE']),
+  ],
   controllers: [GetFeatureByNameRoute],
-  providers: [],
+  providers: [GetFeatureByNameUseCase],
 })
 export class DasilModule {}

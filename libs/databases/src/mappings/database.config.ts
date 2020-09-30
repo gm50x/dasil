@@ -15,7 +15,7 @@ export class DatabaseConfig {
   useNewUrlParser: boolean;
 
   constructor(env: EnvironmentService, key: string) {
-    const dbType = env.get(`${key}_DB_TYPE`);
+    const dbType = env.get(`${key}_TYPE`);
     const Instance = {
       postgres: PostgresConfig,
       mongodb: MongoConfig,
