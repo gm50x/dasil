@@ -1,5 +1,5 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 import {
   GetFeatureByNameInput,
   GetFeatureByNameOutput,
@@ -12,6 +12,7 @@ export class GetFeatureByNameRoute {
   constructor(private readonly getFeatureByName: GetFeatureByNameUseCase) {}
 
   @Get(':toggleName')
+  @ApiResponse({ status: 200, type: GetFeatureByNameOutput })
   async activate(
     @Param() input: GetFeatureByNameInput,
   ): Promise<GetFeatureByNameOutput> {
