@@ -1,3 +1,3 @@
-export class GetFeatureByNameOutput {
+export class GetFeatureToggleByNameOutput {
   constructor(public name?: string, public active?: boolean) {}
 }

@@ -2,23 +2,23 @@ import { MockRepository } from '@gm50x/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Repository } from 'typeorm';
 import { FeatureToggle } from './entities/feature-toggle.entity';
-import { GetFeatureByNameUseCase } from './get-feature-toggle-by-name.use-case';
-import { GetFeatureByNameInput } from './io/get-feature-toggle-by-name.input';
-import { GetFeatureByNameOutput } from './io/get-feature-toggle-by-name.output';
+import { GetFeatureToggleByNameUseCase } from './get-feature-toggle-by-name.use-case';
+import { GetFeatureToggleByNameInput } from './io/get-feature-toggle-by-name.input';
+import { GetFeatureToggleByNameOutput } from './io/get-feature-toggle-by-name.output';
 
-describe(GetFeatureByNameUseCase.name, () => {
-  let instance: GetFeatureByNameUseCase;
+describe(GetFeatureToggleByNameUseCase.name, () => {
+  let instance: GetFeatureToggleByNameUseCase;
   let repo: Repository<FeatureToggle>;
 
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
-      controllers: [GetFeatureByNameUseCase],
+      controllers: [GetFeatureToggleByNameUseCase],
       providers: [
         { provide: 'FeatureToggleRepository', useClass: MockRepository },
       ],
     }).compile();
 
-    instance = app.get(GetFeatureByNameUseCase);
+    instance = app.get(GetFeatureToggleByNameUseCase);
     repo = app.get('FeatureToggleRepository');
   });
 
@@ -26,14 +26,14 @@ describe(GetFeatureByNameUseCase.name, () => {
     expect(instance).toBeDefined();
   });
 
-  it(`should return an instance of ${GetFeatureByNameOutput.name}`, async () => {
+  it(`should return an instance of ${GetFeatureToggleByNameOutput.name}`, async () => {
     const expected = new FeatureToggle('MockFeature', true);
     jest
       .spyOn(repo, 'findOne')
       .mockImplementation(() => Promise.resolve(expected));
-    const input = new GetFeatureByNameInput(expected.name);
+    const input = new GetFeatureToggleByNameInput(expected.name);
     const actual = await instance.activate(input);
-    expect(actual).toBeInstanceOf(GetFeatureByNameOutput);
+    expect(actual).toBeInstanceOf(GetFeatureToggleByNameOutput);
   });
 
   it(`should return not ring the bell`, async () => {
@@ -41,7 +41,7 @@ describe(GetFeatureByNameUseCase.name, () => {
     jest
       .spyOn(repo, 'findOne')
       .mockImplementation(() => Promise.resolve(expected));
-    const input = new GetFeatureByNameInput(expected.name);
+    const input = new GetFeatureToggleByNameInput(expected.name);
     const actual = await instance.activate(input);
     expect(actual.name).toBe(expected.name);
   });
@@ -50,7 +50,7 @@ describe(GetFeatureByNameUseCase.name, () => {
     jest
       .spyOn(repo, 'findOne')
       .mockImplementation(() => Promise.resolve(undefined));
-    const input = new GetFeatureByNameInput('NotFoundToggle');
+    const input = new GetFeatureToggleByNameInput('NotFoundToggle');
     const actual = await instance.activate(input);
     expect(actual).toBeDefined();
     expect(actual.name).toBeUndefined();

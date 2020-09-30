@@ -1,6 +1,6 @@
 import { ApiProperty } from '@nestjs/swagger';
 
-export class GetFeatureByNameInput {
+export class GetFeatureToggleByNameInput {
   @ApiProperty()
   toggleName: string;
 

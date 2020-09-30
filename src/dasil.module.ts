@@ -3,7 +3,7 @@ import { EnvironmentModule } from '@gm50x/environment';
 import { AutoSwaggerModule } from '@gm50x/swagger';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { GetFeatureByNameRoute, GetFeatureByNameUseCase } from '.';
+import { GetFeatureToggleByNameRoute, GetFeatureToggleByNameUseCase } from '.';
 import { FeatureToggle } from './core/get-feature-toggle-by-name/entities/feature-toggle.entity';
 
 @Module({
@@ -13,7 +13,7 @@ import { FeatureToggle } from './core/get-feature-toggle-by-name/entities/featur
     DatabaseModule.fromEnvironmentKeys(['DATABASE']),
     TypeOrmModule.forFeature([FeatureToggle]),
   ],
-  controllers: [GetFeatureByNameRoute],
-  providers: [GetFeatureByNameUseCase],
+  controllers: [GetFeatureToggleByNameRoute],
+  providers: [GetFeatureToggleByNameUseCase],
 })
 export class DasilModule {}

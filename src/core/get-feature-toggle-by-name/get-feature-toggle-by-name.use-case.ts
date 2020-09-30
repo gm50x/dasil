@@ -2,20 +2,20 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { FeatureToggle } from './entities/feature-toggle.entity';
-import { GetFeatureByNameInput } from './io/get-feature-toggle-by-name.input';
-import { GetFeatureByNameOutput } from './io/get-feature-toggle-by-name.output';
+import { GetFeatureToggleByNameInput } from './io/get-feature-toggle-by-name.input';
+import { GetFeatureToggleByNameOutput } from './io/get-feature-toggle-by-name.output';
 
 @Injectable()
-export class GetFeatureByNameUseCase {
+export class GetFeatureToggleByNameUseCase {
   constructor(
     @InjectRepository(FeatureToggle)
     private readonly featuresRepo: Repository<FeatureToggle>,
   ) {}
 
   async activate(
-    input: GetFeatureByNameInput,
-  ): Promise<GetFeatureByNameOutput> {
+    input: GetFeatureToggleByNameInput,
+  ): Promise<GetFeatureToggleByNameOutput> {
     const feature = await this.featuresRepo.findOne(input.toggleName);
-    return new GetFeatureByNameOutput(feature?.name, feature?.active);
+    return new GetFeatureToggleByNameOutput(feature?.name, feature?.active);
   }
 }
