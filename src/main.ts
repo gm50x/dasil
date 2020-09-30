@@ -2,10 +2,10 @@ import { EnvironmentService } from '@gm50x/environment';
 import { AutoSwaggerService } from '@gm50x/swagger';
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { DasilModule } from './dasil.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(DasilModule);
   app.setGlobalPrefix('api/v1');
   app.useGlobalPipes(
     new ValidationPipe({

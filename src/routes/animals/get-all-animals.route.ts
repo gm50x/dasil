@@ -9,6 +9,7 @@ import { GetAllAnimalsOutput } from '../../core/animals/io/get-all-animals.outpu
 @Controller('animal')
 export class GetAllAnimalsRoute {
   constructor(private readonly getAllAnimalsUseCase: GetAllAnimalsUseCase) {}
+
   @Get()
   @ApiResponse({ status: 200, type: GetAllAnimalsOutput })
   async activate(
