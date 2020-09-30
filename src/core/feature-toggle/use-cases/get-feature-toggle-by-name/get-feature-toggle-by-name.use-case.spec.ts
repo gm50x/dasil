@@ -1,7 +1,7 @@
 import { MockRepository } from '@gm50x/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import { Repository } from 'typeorm';
-import { FeatureToggle } from './entities/feature-toggle.entity';
+import { FeatureToggle } from '../../entities/feature-toggle.entity';
 import { GetFeatureToggleByNameUseCase } from './get-feature-toggle-by-name.use-case';
 import { GetFeatureToggleByNameInput } from './io/get-feature-toggle-by-name.input';
 import { GetFeatureToggleByNameOutput } from './io/get-feature-toggle-by-name.output';

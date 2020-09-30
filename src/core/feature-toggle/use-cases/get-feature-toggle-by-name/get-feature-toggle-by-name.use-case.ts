@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { FeatureToggle } from './entities/feature-toggle.entity';
+import { FeatureToggle } from '../../entities/feature-toggle.entity';
 import { GetFeatureToggleByNameInput } from './io/get-feature-toggle-by-name.input';
 import { GetFeatureToggleByNameOutput } from './io/get-feature-toggle-by-name.output';
 
