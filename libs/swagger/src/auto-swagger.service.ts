@@ -5,10 +5,14 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 @Injectable()
 export class AutoSwaggerService {
   constructor(private readonly env: EnvironmentService) {}
-  addSwagger(app: INestApplication, prefix: string = 'APP'): void {
+  addSwagger(app: INestApplication, prefix: string = 'SWAGGER'): void {
     const options = new DocumentBuilder()
       .setTitle(this.env.get(`${prefix}_TITLE`) || 'Sample API')
-      .setContact('Dasil', 'https://github.com/gm50x/dasil', '')
+      .setContact(
+        this.env.get(`${prefix}_AUTHOR`) || '',
+        this.env.get(`${prefix}_SITE`) || '',
+        this.env.get(`${prefix}_EMAIL`) || '',
+      )
       .setDescription(
         this.env.get(`${prefix}_DESCRIPTION`) ||
           'This is a sample API, use it as you like.',
