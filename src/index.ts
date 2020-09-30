@@ -1,2 +1,2 @@
 export * from './routes';
-export * from './core';
+export * from './core/get-feature-by-name.use-case';

@@ -1,5 +1,5 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GetFeatureByNameRoute } from '.';
+import { GetFeatureByNameRoute } from './get-feature-by-name.route';
 
 describe(GetFeatureByNameRoute.name, () => {
   let instance: GetFeatureByNameRoute;
