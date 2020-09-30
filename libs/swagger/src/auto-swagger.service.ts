@@ -19,9 +19,10 @@ export class AutoSwaggerService {
       )
       .setExternalDoc(
         'Export Specs',
-        `${this.env.get('URL') || 'http://localhost'}:${this.env.get(
-          'PORT',
-        )}/${this.env.get(`${prefix}_DOCS`) || 'api-docs'}-json`,
+        `${this.env.get('URL') ||
+          `http://localhost:${this.env.get('PORT')}`}/${this.env.get(
+          `${prefix}_DOCS`,
+        ) || 'api-docs'}-json`,
       )
       .setVersion(this.env.get(`${prefix}_VERSION`) || 'v1')
       .build();
