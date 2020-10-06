@@ -1,3 +1,3 @@
-export class GetFeatureToggleByNameOutput {
-  constructor(public name?: string, public active?: boolean) {}
-}
+import { Movie } from 'src/core/hollywood/entities/movie.entity';
+
+export class GetFeatureToggleByNameOutput extends Array<Movie> {}

@@ -8,13 +8,16 @@ import {
   GetFeatureToggleByNameUseCase,
   FeatureToggle,
 } from '.';
+import { Genre } from './core/hollywood/entities/genre.entity';
+import { Movie } from './core/hollywood/entities/movie.entity';
+import { Person } from './core/hollywood/entities/person.entity';
 
 @Module({
   imports: [
     EnvironmentModule,
     AutoSwaggerModule,
     DatabaseModule.fromEnvironmentKeys(['DATABASE']),
-    TypeOrmModule.forFeature([FeatureToggle]),
+    TypeOrmModule.forFeature([FeatureToggle, Movie, Genre, Person]),
   ],
   controllers: [GetFeatureToggleByNameRoute],
   providers: [GetFeatureToggleByNameUseCase],
