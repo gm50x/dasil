@@ -4,7 +4,7 @@ import {
   GetFeatureToggleByNameInput,
   GetFeatureToggleByNameOutput,
   GetFeatureToggleByNameUseCase,
-} from '../../core';
+} from '../../../core';
 import { GetFeatureToggleByNameRoute } from './get-feature-toggle-by-name.route';
 
 describe(GetFeatureToggleByNameRoute.name, () => {

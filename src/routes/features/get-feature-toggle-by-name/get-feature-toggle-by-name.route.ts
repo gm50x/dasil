@@ -5,14 +5,12 @@ import {
   GetFeatureToggleByNameInput,
   GetFeatureToggleByNameOutput,
   GetFeatureToggleByNameUseCase,
-} from '../../core';
+} from '../../../core';
 
 @Controller('features')
 @ApiTags('Features')
 export class GetFeatureToggleByNameRoute {
-  constructor(
-    private readonly getFeatureByName: GetFeatureToggleByNameUseCase,
-  ) {}
+  constructor(private readonly useCase: GetFeatureToggleByNameUseCase) {}
 
   @Get(':toggleName')
   @ApiResponse({ status: 200, type: GetFeatureToggleByNameOutput })
@@ -21,6 +19,6 @@ export class GetFeatureToggleByNameRoute {
   async activate(
     @Param() input: GetFeatureToggleByNameInput,
   ): Promise<GetFeatureToggleByNameOutput> {
-    return await this.getFeatureByName.activate(input);
+    return await this.useCase.activate(input);
   }
 }
