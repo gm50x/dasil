@@ -1,6 +1,6 @@
 import { createParamDecorator, ExecutionContext } from '@nestjs/common';
 
-export const InHeaders = createParamDecorator(
+export const ValidateHeaders = createParamDecorator(
   (data: unknown, ctx: ExecutionContext) =>
     ctx.switchToHttp().getRequest().headers,
 );

@@ -1,4 +1,5 @@
-import { MockUseCase } from '@gm50x/common';
+import { MockEnvironmentService, MockUseCase, TokenInput } from '@gm50x/common';
+import { EnvironmentService } from '@gm50x/environment';
 import { Test, TestingModule } from '@nestjs/testing';
 import {
   FlipFeatureToggleStateByNameInput,
@@ -15,6 +16,7 @@ describe(FlipFeatureToggleStateByNameRoute.name, () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [FlipFeatureToggleStateByNameRoute],
       providers: [
+        { provide: EnvironmentService, useClass: MockEnvironmentService },
         { provide: FlipFeatureToggleStateByNameUseCase, useClass: MockUseCase },
       ],
     }).compile();
