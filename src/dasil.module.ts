@@ -5,7 +5,9 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import {
   GetFeatureToggleByNameRoute,
+  FlipFeatureToggleStateByNameRoute,
   GetFeatureToggleByNameUseCase,
+  FlipFeatureToggleStateByNameUseCase,
   FeatureToggle,
 } from '.';
 
@@ -16,7 +18,10 @@ import {
     DatabaseModule.fromEnvironmentKeys(['DATABASE']),
     TypeOrmModule.forFeature([FeatureToggle]),
   ],
-  controllers: [GetFeatureToggleByNameRoute],
-  providers: [GetFeatureToggleByNameUseCase],
+  controllers: [GetFeatureToggleByNameRoute, FlipFeatureToggleStateByNameRoute],
+  providers: [
+    GetFeatureToggleByNameUseCase,
+    FlipFeatureToggleStateByNameUseCase,
+  ],
 })
 export class DasilModule {}
