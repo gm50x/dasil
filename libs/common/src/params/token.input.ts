@@ -5,9 +5,9 @@ export class TokenInput {
   @ApiProperty()
   @IsNotEmpty()
   @IsAlphanumeric()
-  token: string;
+  Authorization: string;
 
-  constructor(token?: string) {
-    this.token = token;
+  constructor(authorization?: string) {
+    this.Authorization = authorization;
   }
 }

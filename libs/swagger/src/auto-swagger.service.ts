@@ -7,6 +7,7 @@ export class AutoSwaggerService {
   constructor(private readonly env: EnvironmentService) {}
   addSwagger(app: INestApplication, prefix: string = 'SWAGGER'): void {
     const options = new DocumentBuilder()
+
       .setTitle(this.env.get(`${prefix}_TITLE`) || 'Sample API')
       .setContact(
         this.env.get(`${prefix}_AUTHOR`) || '',
@@ -17,6 +18,16 @@ export class AutoSwaggerService {
         this.env.get(`${prefix}_DESCRIPTION`) ||
           'This is a sample API, use it as you like.',
       )
+      .addBasicAuth()
+      .addBearerAuth()
+      // .addOAuth2({
+      //   type: 'oauth2',
+      //   flows: {
+      //     clientCredentials: {
+      //       scopes: ['read:all', 'write:all'],
+      //     },
+      //   },
+      // })
       .setExternalDoc(
         'Export Specs',
         `${this.env.get('URL') ||

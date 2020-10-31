@@ -1,12 +1,11 @@
 import {
   RequestError,
   ServerError,
-  AccessTokenGuard,
   RequestForbiddenError,
-  TokenInput,
 } from '@gm50x/common';
-import { Controller, Get, Headers, Param, UseGuards } from '@nestjs/common';
-import { ApiResponse, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from '@gm50x/common/guards/jwt-auth.guard';
+import { Controller, Get, Param, UseGuards } from '@nestjs/common';
+import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import {
   GetFeatureToggleByNameInput,
   GetFeatureToggleByNameOutput,
@@ -15,7 +14,8 @@ import {
 
 @Controller('features')
 @ApiTags('Features')
-@UseGuards(AccessTokenGuard)
+@ApiBearerAuth()
+@UseGuards(JwtAuthGuard)
 export class GetFeatureToggleByNameRoute {
   constructor(private readonly useCase: GetFeatureToggleByNameUseCase) {}
 
@@ -26,7 +26,6 @@ export class GetFeatureToggleByNameRoute {
   @ApiResponse({ status: 500, type: ServerError })
   async activate(
     @Param() input: GetFeatureToggleByNameInput,
-    @Headers() token?: TokenInput,
   ): Promise<GetFeatureToggleByNameOutput> {
     return await this.useCase.activate(input);
   }

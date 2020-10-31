@@ -1,12 +1,11 @@
 import {
   RequestError,
   ServerError,
-  AccessTokenGuard,
-  TokenInput,
   RequestForbiddenError,
 } from '@gm50x/common';
-import { Controller, Headers, Param, Put, UseGuards } from '@nestjs/common';
-import { ApiOperation, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from '@gm50x/common/guards/jwt-auth.guard';
+import { Controller, Param, Put, UseGuards } from '@nestjs/common';
+import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import {
   FlipFeatureToggleStateByNameInput,
   FlipFeatureToggleStateByNameOutput,
@@ -15,7 +14,8 @@ import {
 
 @Controller('features')
 @ApiTags('Features')
-@UseGuards(AccessTokenGuard)
+@ApiBearerAuth()
+@UseGuards(JwtAuthGuard)
 export class FlipFeatureToggleStateByNameRoute {
   constructor(private readonly useCase: FlipFeatureToggleStateByNameUseCase) {}
 
@@ -26,7 +26,6 @@ export class FlipFeatureToggleStateByNameRoute {
   @ApiResponse({ status: 500, type: ServerError })
   async activate(
     @Param() input: FlipFeatureToggleStateByNameInput,
-    @Headers() token?: TokenInput,
   ): Promise<FlipFeatureToggleStateByNameOutput> {
     return await this.useCase.activate(input);
   }

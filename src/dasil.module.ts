@@ -1,3 +1,4 @@
+import { AuthModule } from '@gm50x/auth';
 import { DatabaseModule } from '@gm50x/database';
 import { EnvironmentModule } from '@gm50x/environment';
 import { AutoSwaggerModule } from '@gm50x/swagger';
@@ -13,6 +14,7 @@ import {
 
 @Module({
   imports: [
+    AuthModule,
     EnvironmentModule,
     AutoSwaggerModule,
     DatabaseModule.fromEnvironmentKeys(['DATABASE']),

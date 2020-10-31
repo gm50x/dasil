@@ -18,6 +18,8 @@
     "@gm50x/database/(.*)": "<rootDir>/../libs/databases/src/$1",
     "@gm50x/database": "<rootDir>/../libs/databases/src",
     "@gm50x/swagger/(.*)": "<rootDir>/../libs/swagger/src/$1",
-    "@gm50x/swagger": "<rootDir>/../libs/swagger/src"
+    "@gm50x/swagger": "<rootDir>/../libs/swagger/src",
+    "@gm50x/auth/(.*)": "<rootDir>/../libs/auth/src/$1",
+    "@gm50x/auth": "<rootDir>/../libs/auth/src"
   }
 }
