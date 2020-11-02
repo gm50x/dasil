@@ -3,7 +3,7 @@ import {
   ServerError,
   RequestForbiddenError,
 } from '@gm50x/common';
-import { JwtAuthGuard } from '@gm50x/common/guards/jwt-auth.guard';
+import { EnvoyAuthGuard } from '@gm50x/common/guards/envoy-auth.guard';
 import { Controller, Get, Param, UseGuards } from '@nestjs/common';
 import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import {
@@ -15,7 +15,7 @@ import {
 @Controller('features')
 @ApiTags('Features')
 @ApiBearerAuth()
-@UseGuards(JwtAuthGuard)
+@UseGuards(EnvoyAuthGuard)
 export class GetFeatureToggleByNameRoute {
   constructor(private readonly useCase: GetFeatureToggleByNameUseCase) {}
 

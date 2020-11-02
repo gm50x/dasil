@@ -1,5 +1,6 @@
 import { MockEnvironmentService, MockUseCase } from '@gm50x/common';
 import { EnvironmentService } from '@gm50x/environment';
+import { HttpModule, HttpService } from '@nestjs/common';
 import { Test, TestingModule } from '@nestjs/testing';
 import {
   GetFeatureToggleByNameInput,
@@ -15,6 +16,7 @@ describe(GetFeatureToggleByNameRoute.name, () => {
   beforeEach(async () => {
     const app: TestingModule = await Test.createTestingModule({
       controllers: [GetFeatureToggleByNameRoute],
+      imports: [HttpModule],
       providers: [
         { provide: EnvironmentService, useClass: MockEnvironmentService },
         { provide: GetFeatureToggleByNameUseCase, useClass: MockUseCase },
@@ -23,7 +25,6 @@ describe(GetFeatureToggleByNameRoute.name, () => {
 
     instance = app.get(GetFeatureToggleByNameRoute);
     useCase = app.get(GetFeatureToggleByNameUseCase);
-    console.log(instance);
   });
 
   it('should be defined', () => {
