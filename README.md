@@ -18,7 +18,7 @@ You can also run it yourself. To do so, you have to raise the database first.
 Run the docker command, but then kill the api service. 
 
 ```bash
-$ docker-compose up && docker stop toggles-api
+$ docker-compose up && docker container stop toggles-api
 ```
 
 Install the dependencies
