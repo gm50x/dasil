@@ -1,21 +1,21 @@
 version: '3'
 services:
-  # toggles-api:
-  #   build:
-  #     context: .
-  #     args:
-  #       buildno: 1
-  #   image: toggles-api
-  #   depends_on:
-  #     - toggles-db
-  #   environment:
-  #     PORT: ${PORT}
-  #     DATABASE_URL: postgresql://postgres:pwd4postgres@toggles-db:5432/postgres
-  #   ports:
-  #     - ${PORT}:${PORT}
-  #   container_name: toggles-api
-  #   networks:
-  #     - skynet
+  toggles-api:
+    build:
+      context: .
+      args:
+        buildno: 1
+    image: toggles-api
+    depends_on:
+      - toggles-db
+    environment:
+      PORT: ${PORT}
+      DATABASE_URL: postgresql://postgres:pwd4postgres@toggles-db:5432/postgres
+    ports:
+      - ${PORT}:${PORT}
+    container_name: toggles-api
+    networks:
+      - skynet
   toggles-db:
     image: postgres:alpine
     environment:
